@@ -1,0 +1,88 @@
+package program54;
+import java.util.Scanner;
+public class Program54 {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int row, col, i,s = 0, j,l = 0,max ;
+       int arr[][] = new int[10][10];
+       Scanner scan = new Scanner(System.in);
+	   
+       // enter row and column for array.
+       System.out.print("Enter row for the array (max 10) : ");
+       row = scan.nextInt();
+       System.out.print("Enter column for the array (max 10) : ");
+       col = scan.nextInt();
+	   
+       // enter array elements.
+       System.out.println("Enter " +(row*col)+ " Array Elements : ");
+       for(i=0; i<row; i++)
+       {
+           for(j=0; j<col; j++)
+           {
+               arr[i][j] = scan.nextInt();
+           }
+       }
+	   
+       // the 2D array is here.
+       System.out.print("The Array is :\n");
+       for(i=0; i<row; i++)
+       {
+           for(j=0; j<col; j++)
+           {
+               System.out.print(arr[i][j]+ "  ");
+           }
+           System.out.println();
+       }
+     for(j=0; j<col; j++)
+       {
+           max=arr[i][j]; 
+           for(i=0; i<row; i++)
+           { 
+               if(arr[i][j]>max)
+               {
+                   max=arr[i][j];
+                   s=i;
+               }    
+           }
+         System.out.print("\nThe maximum in  "+(j+1)+" column is "+ max+ "with student number "+(s+1) );  
+       }
+     for(j=0; j<col; j++)
+       {
+           for(i=0; i<row; i++){ 
+               l=arr[i][j]; 
+           for(i=0; i<row; i++)
+           {
+     if(arr[i][j]<l)
+               {    
+                   l=arr[i][j];
+                   s=i;
+               } 
+           }
+      }
+           System.out.print(" \nthe minimum in "+(j+1)+" column is"+l+"with student number "+(s+1));   
+        }    
+   System.out.print(" \ncolumn 1 is Weight \n column 2 is Height"); 
+    }
+}
+Output:
+run:
+Enter row for the array (max 10) : 3
+Enter column for the array (max 10) : 2
+Enter 6 Array Elements : 
+12
+23
+34
+45
+43
+32
+The Array is :
+12  23  
+34  45  
+43  32  
+
+The maximum in  1 column is 43with student number 3
+The maximum in  2 column is 45with student number 2 
+the minimum in 1 column is12with student number 2 
+the minimum in 2 column is23with student number 2 
+column 1 is Weight 
+ column 2 is HeightBUILD SUCCESSFUL (total time: 18 seconds)
